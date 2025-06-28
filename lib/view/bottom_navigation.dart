@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:whatsapp_chat_app/calls_screen.dart';
-import 'package:whatsapp_chat_app/commities_screen.dart';
-import 'package:whatsapp_chat_app/home_chats_screen.dart';
-import 'package:whatsapp_chat_app/updates_screen.dart';
+import 'package:whatsapp_chat_app/view/calls_screen.dart';
+import 'package:whatsapp_chat_app/view/chat_list_screen.dart';
+import 'package:whatsapp_chat_app/view/commities_screen.dart';
+import 'package:whatsapp_chat_app/view/updates_screen.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -14,7 +14,7 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    ChatsPage(),
+    ChatListScreen(),
     UpdatesPage(),
     CommunitiesPage(),
     CallsPage(),
@@ -33,7 +33,10 @@ class _MainScreenState extends State<MainScreen> {
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chats'),
           BottomNavigationBarItem(icon: Icon(Icons.update), label: 'Updates'),
-          BottomNavigationBarItem(icon: Icon(Icons.groups), label: 'Communities'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.groups),
+            label: 'Communities',
+          ),
           BottomNavigationBarItem(icon: Icon(Icons.call), label: 'Calls'),
         ],
       ),

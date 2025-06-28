@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:whatsapp_chat_app/call_model.dart';
+import 'package:whatsapp_chat_app/models/call_model.dart';
 
 // CALLS PAGE
 class CallsPage extends StatelessWidget {
@@ -22,8 +21,14 @@ class CallsPage extends StatelessWidget {
         title: Text('Calls', style: TextStyle(color: Colors.white)),
         backgroundColor: Color(0xFF075E54),
         actions: [
-          IconButton(icon: Icon(Icons.search, color: Colors.white), onPressed: () {}),
-          IconButton(icon: Icon(Icons.more_vert, color: Colors.white), onPressed: () {}),
+          IconButton(
+            icon: Icon(Icons.search, color: Colors.white),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: Icon(Icons.more_vert, color: Colors.white),
+            onPressed: () {},
+          ),
         ],
       ),
       body: ListView.builder(
@@ -39,8 +44,11 @@ class CallsPage extends StatelessWidget {
             subtitle: Row(
               children: [
                 Icon(
-                  call.type == 'Incoming' ? Icons.call_received :
-                  call.type == 'Outgoing' ? Icons.call_made : Icons.call_received,
+                  call.type == 'Incoming'
+                      ? Icons.call_received
+                      : call.type == 'Outgoing'
+                      ? Icons.call_made
+                      : Icons.call_received,
                   size: 16,
                   color: call.type == 'Missed' ? Colors.red : Colors.green,
                 ),
